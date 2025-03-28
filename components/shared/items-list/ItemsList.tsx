@@ -1,21 +1,22 @@
-'use client';
-import React from 'react';
-import { useConversation } from '../../../app/hooks/useConversation';
-import { cn } from '../../../lib/utils';
-import { Card } from '../../ui/card';
+"use client";
+import React from "react";
+import { useConversation } from "../../../app/hooks/useConversation";
+import { cn } from "../../../lib/utils";
+import { Card } from "../../ui/card";
 type Props = React.PropsWithChildren<{
   title: string;
   action?: React.ReactNode;
 }>;
 
 const ItemsList = ({ children, title, action: Action }: Props) => {
-  const { isActive } = useConversation();
+const { isActive } = useConversation();
 
   return (
     <Card
-      className={cn('hidden h-full w-full lg:flex-none lg:w-80 p-2', {
+      // cn by shadcn to add logic and object for when to render
+      className={cn("hidden h-full w-full lg:flex-none lg:w-80 p-2", {
         block: !isActive,
-        'lg:block': isActive,
+        "lg:block": isActive,
       })}
     >
       <div className="mb-4 flex items-center justify-between">
@@ -26,7 +27,7 @@ const ItemsList = ({ children, title, action: Action }: Props) => {
         {children}
       </div>
     </Card>
-  );
-}; 
+  ); 
+};
 
 export default ItemsList;
