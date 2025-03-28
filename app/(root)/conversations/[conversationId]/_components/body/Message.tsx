@@ -1,10 +1,10 @@
-import { format } from 'date-fns';
+import { format } from "date-fns";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '../../../../../../components/ui/avatar';
-import { cn } from '../../../../../../lib/utils';
+} from "../../../../../../components/ui/avatar";
+import { cn } from "../../../../../../lib/utils";
 type Props = {
   fromCurrentUser: boolean;
   senderImage: string;
@@ -27,40 +27,40 @@ const Message = ({
   seen,
 }: Props) => {
   const formatTime = (timestamp: number) => {
-    return format(timestamp, 'HH:mm');
+    return format(timestamp, "HH:mm");
   };
   return (
     <div
-      className={cn('flex items-end', {
-        'justify-end': fromCurrentUser,
+      className={cn("flex items-end", {
+        "justify-end": fromCurrentUser,
       })}
     >
       <div
-        className={cn('flex flex-col w-full mx-2', {
-          'order-1 items-end': fromCurrentUser,
-          'order-2 items-start': !fromCurrentUser,
+        className={cn("flex flex-col w-full mx-2", {
+          "order-1 items-end": fromCurrentUser,
+          "order-2 items-start": !fromCurrentUser,
         })}
       >
         <div
-          className={cn('px-4 py-2 rounded-lg max-w-[70%]', {
-            'bg-primary text-primary-foreground': fromCurrentUser,
-            'bg-secondary text-secondary-foreground': !fromCurrentUser,
-            'rounded-br-none': !lastByUser && fromCurrentUser,
-            'rounded-bl-none': !lastByUser && !fromCurrentUser,
+          className={cn("px-4 py-2 rounded-lg max-w-[70%]", {
+            "bg-primary text-primary-foreground": fromCurrentUser,
+            "bg-secondary text-secondary-foreground": !fromCurrentUser,
+            "rounded-br-none": !lastByUser && fromCurrentUser,
+            "rounded-bl-none": !lastByUser && !fromCurrentUser,
           })}
         >
-          {type === 'text' ? (
+          {type === "text" ? (
             <p className="text-wrap break-words whitespace-pre-wrap break-all">
-              {content || 'Message Test'}
+              {content || "Message Test"}
             </p>
           ) : (
-            'NO Message'
+            "NO Message"
           )}
 
           <p
             className={cn(`text-xs flex w-full my-1`, {
-              'text-primary-foreground justify-end': fromCurrentUser,
-              'text-secondary-foreground justify-start': !fromCurrentUser,
+              "text-primary-foreground justify-end": fromCurrentUser,
+              "text-secondary-foreground justify-start": !fromCurrentUser,
             })}
           >
             {formatTime(createdAt)}
@@ -69,9 +69,9 @@ const Message = ({
         {seen}
       </div>
       <Avatar
-        className={cn('relative w-8 h-8', {
-          'order-2': fromCurrentUser,
-          'order-1': !fromCurrentUser,
+        className={cn("relative w-8 h-8", {
+          "order-2": fromCurrentUser,
+          "order-1": !fromCurrentUser,
           invisible: lastByUser,
         })}
       >
