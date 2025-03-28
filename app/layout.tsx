@@ -1,21 +1,15 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { ConvexClientProvider } from "@/providers/ConvexClientProvider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+import { TooltipProvider } from '@radix-ui/react-tooltip';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import SidebarWrapper from '../components/shared/sidebar/SidebarWrapper';
+import { Toaster } from '../components/ui/sonner';
+import { ThemeProvider } from '../components/ui/theme/theme-provider';
+import { ConvexClientProvider } from '../providers/ConvexClientProvider';
+import './globals.css';
+const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
-  title: "Chat App",
-  description: "Real Time Chat App",
+  title: 'Chat App',
+  description: 'Realtime chat app using Nextjs',
 };
 
 export default function RootLayout({
@@ -25,12 +19,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ConvexClientProvider>
-            {children}
-        </ConvexClientProvider>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ConvexClientProvider>
+            <TooltipProvider>
+              <SidebarWrapper>{children}</SidebarWrapper>
+            </TooltipProvider>
+            <Toaster richColors></Toaster>
+          </ConvexClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
