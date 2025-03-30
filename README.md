@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Connectly - Real-Time Chat Application
 
-## Getting Started
+Connectly is a modern, real-time chat application built with cutting-edge technologies like **Next.js**, **Convex**, **Clerk**, and **TailwindCSS**. It provides a seamless and intuitive user experience for connecting with friends, creating group chats, and managing conversations.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔗 **Authentication**
+- Secure user authentication powered by [Clerk](https://clerk.dev).
+- Supports user registration, login, and profile management.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 💬 **Conversations**
+- **Direct Messages (DMs):** Chat one-on-one with friends.
+- **Group Chats:** Create and manage group conversations with multiple members.
+- **Real-Time Messaging:** Messages are updated instantly using Convex's real-time database.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 👫 **Friends Management**
+- Send and receive friend requests.
+- Accept or deny friend requests.
+- View a list of all your friends.
 
-## Learn More
+### 📂 **Group Management**
+- Create groups with custom names.
+- Add or remove members from groups.
+- Leave or delete groups with confirmation dialogs.
 
-To learn more about Next.js, take a look at the following resources:
+### 🛠️ **UI/UX**
+- Fully responsive design for desktop and mobile.
+- Dark mode support with theme toggling.
+- Intuitive and accessible UI components built with [Radix UI](https://www.radix-ui.com) and TailwindCSS.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔔 **Notifications**
+- Real-time toast notifications for actions like sending friend requests, accepting requests, and leaving groups.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🔍 **Error Handling**
+- Graceful error handling with user-friendly messages.
+- Fallback components for empty states (e.g., no conversations or friend requests).
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### **Frontend**
+- [Next.js](https://nextjs.org) - React framework for server-side rendering and static site generation.
+- [TailwindCSS](https://tailwindcss.com) - Utility-first CSS framework for styling.
+- [Radix UI](https://www.radix-ui.com) - Accessible and customizable UI primitives.
+- [Lucide Icons](https://lucide.dev) - Beautiful and consistent icons.
+
+### **Backend**
+- [Convex](https://convex.dev) - Real-time database and serverless backend.
+- [Clerk](https://clerk.dev) - Authentication and user management.
+
+### **Other Tools**
+- [React Hook Form](https://react-hook-form.com) - Form validation and management.
+- [Zod](https://zod.dev) - Schema validation for forms and APIs.
+- [Sonner](https://sonner.dev) - Toast notifications.
+- [Date-fns](https://date-fns.org) - Date manipulation library.
+
+---
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Aashay30/connectly.git
+   cd connectly
+   ```
+
+2. Install dependencies:
+  ```bash
+  npm install
+  # or
+  yarn install
+  # or
+  pnpm install
+  ```
+
+3. Set up environment variables:
+
+Create a .env.local file in the root directory.
+Add the following variables:
+
+  ```bash
+  NEXT_PUBLIC_CONVEX_URL=<your-convex-url>
+  CLERK_WEBHOOK_SECRET=<your-clerk-webhook-secret>
+  ```
+
+4. Start the development server:
+
+  ```bash
+  npm run dev
+  # or
+  yarn dev
+  # or
+  pnpm dev
+  ```
