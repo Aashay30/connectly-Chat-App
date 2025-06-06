@@ -64,6 +64,152 @@ Connectly is a modern, real-time chat application built with cutting-edge techno
 
 ---
 
+# 📸 Screenshots
+
+A visual walkthrough of the chat application showcasing key features and interactions.
+
+---
+
+## 🧾 Sign Up
+![SignUp](screenshots/SignUp.png)  
+> New users can register with basic details to start using the chat application.
+
+---
+
+## 🔐 Sign In
+![SignIn](screenshots/SignIn.png)  
+> Existing users can securely log in to their account.
+
+---
+
+## 🌙 Toggle Dark/Light Mode
+![ToggleDarkLightMode](screenshots/ToggleDarkLightMode.png)  
+> Easily switch between light and dark themes for personalized viewing.
+
+---
+
+## 👤 Account Details & Sign Out
+![AccountsDetailsAndSignOut](screenshots/AccountsDetailsAndSignOut.png)  
+> View your profile details and securely sign out of the application.
+
+---
+
+## 🧑‍🤝‍🧑 Add Friends
+![AddFriends](screenshots/AddFriends.png)  
+> Search and send friend requests to connect with others.
+
+---
+
+## 📨 Friend Request Sent
+![FriendRequestSent](screenshots/FriendRequestSent.png)  
+> Confirmation screen after a successful friend request is sent.
+
+---
+
+## 📥 Friend Request Received
+![FriendRequestReceived](screenshots/FriendRequestReceived.png)  
+> Users get notified when someone sends them a friend request.
+
+---
+
+## ✅ Friend Request Accepted
+![FriendRequestAccepted](screenshots/FriendRequestAccepted.png)  
+> Accept friend requests to start chatting.
+
+---
+
+## ❌ Empty Friend Requests
+![EmptyFriendsRequest](screenshots/EmptyFriendsRequest.png)  
+> A placeholder when there are no incoming or outgoing friend requests.
+
+---
+
+## 💬 Chat Interface
+![ChatInterface](screenshots/ChatInterface.png)  
+> Real-time one-on-one messaging with friends.
+
+---
+
+## 📨 Message Sent
+![MessageSent](screenshots/MessageSent.png)  
+> Shows a message successfully sent to a friend.
+
+---
+
+## 📩 Message Received
+![MessageReceived](screenshots/MessageReceived.png)  
+> Displays an incoming message in the conversation view.
+
+---
+
+## 👁️ Message Seen
+![MessageSeen](screenshots/MessageSeen.png)  
+> Shows read receipts when a friend has seen your message.
+
+---
+
+## 👥 Create Group
+![CreateGroup](screenshots/CreateGroup.png)  
+> Start a new group by providing a group name and icon.
+
+---
+
+## 👨‍👩‍👧‍👦 Select Friends to Add in Group
+![CreateGroupSelectFriends](screenshots/CreateGroupSelectFriends.png)  
+> Choose friends to include in the new group chat.
+
+---
+
+## 🎉 Group Created Confirmation
+![GroupCreated](screenshots/GroupCreated.png)  
+> Notification confirming the group has been successfully created.
+
+---
+
+## 📁 Group Appears in Conversations
+![CreatedGroupAppearsInConversations](screenshots/CreatedGroupAppearsInConversations.png)  
+> Newly created groups appear in the chat sidebar.
+
+---
+
+## 📩 Message Sent in Group
+![MessageSentInGroup](screenshots/MessageSentInGroup.png)  
+> Example of sending a message inside a group chat.
+
+---
+
+## 📨 Group Message Received
+![MessageReceivedOfGroup](screenshots/MessageReceivedOfGroup.png)  
+> Shows a message received from someone in the group.
+
+---
+
+## 👁️ Group Message Seen
+![GroupMessageSeen](screenshots/GroupMessageSeen.png)  
+> Group messages display who has seen them.
+
+---
+
+## 🧍 Friends Appear in Conversations
+![FriendsAppersInConversations](screenshots/FriendsAppersInConversations.png)  
+> All active chats are easily accessible in the conversations panel.
+
+---
+
+## ❌ Remove Friend
+![RemoveFriend](screenshots/RemoveFriend.png)  
+> Remove someone from your friend list when needed.
+
+---
+
+## 🚪 Leave or Delete Group
+![LeaveOrDeleteGroup](screenshots/LeaveOrDeleteGroup.png)  
+> Choose to leave or delete a group depending on your role.
+
+
+
+---
+
 ### Installation
 
 1. Clone the repository:
@@ -100,6 +246,52 @@ Add the following variables:
   # or
   pnpm dev
   ```
+
+---
+
+## 🧩 Challenges and Problems Faced During Development
+
+### 1. Real-Time Data Synchronization
+- **Challenge:** Ensuring all users see up-to-date conversations and messages instantly.
+- **Solution:** Leveraged Convex’s real-time queries and subscriptions, but had to carefully manage cache invalidation and UI updates to avoid stale data or race conditions.
+
+### 2. Authentication Integration
+- **Challenge:** Integrating Clerk authentication with Convex and Next.js, especially for server-side rendering and API routes.
+- **Solution:** Implemented custom hooks and middleware to synchronize user sessions and handle edge cases like token refresh and session expiry.
+
+### 3. Complex State Management
+- **Challenge:** Managing UI state for asynchronous actions (e.g., sending messages, leaving groups) and ensuring feedback is always accurate.
+- **Solution:** Built custom hooks like `useMutationState` to track pending states and errors, and used optimistic UI updates for a smoother experience.
+
+### 4. Error Handling and User Feedback
+- **Challenge:** Providing clear, actionable feedback for both expected and unexpected errors, especially in real-time operations.
+- **Solution:** Used Sonner for toast notifications and differentiated between known (e.g., validation) and unknown errors for better user guidance.
+
+### 5. Group and Membership Logic
+- **Challenge:** Handling group creation, member management, and permissions, including edge cases like removing the last member or deleting a group.
+- **Solution:** Designed robust backend logic and confirmation dialogs to prevent accidental data loss and ensure data integrity.
+
+### 6. Responsive and Accessible UI
+- **Challenge:** Making the app fully responsive and accessible, including keyboard navigation and screen reader support.
+- **Solution:** Utilized Radix UI primitives and followed accessibility best practices, testing across devices and input methods.
+
+### 7. Schema and Data Modeling
+- **Challenge:** Designing a scalable and flexible schema for users, conversations, messages, and group memberships.
+- **Solution:** Iteratively refined the Convex schema to support efficient queries and relationships, adding indexes for performance.
+
+### 8. Deployment and Environment Management
+- **Challenge:** Managing environment variables and deployment settings for Vercel and Convex, especially for secrets and webhooks.
+- **Solution:** Documented required environment variables and automated deployment steps, ensuring smooth CI/CD.
+
+### 9. Third-Party Integration Issues
+- **Challenge:** Dealing with breaking changes or bugs in third-party libraries (e.g., Clerk, Convex, Radix UI).
+- **Solution:** Kept dependencies up to date, read release notes, and contributed bug reports or fixes when necessary.
+
+### 10. Developer Experience and Code Quality
+- **Challenge:** Maintaining code quality and consistency in a fast-moving project.
+- **Solution:** Used ESLint, Prettier, and TypeScript for static analysis and formatting, and enforced best practices through code reviews.
+
+---
 
 # Key Challenges and Solutions in `LeaveGroupDialog` Component
 
