@@ -2,6 +2,7 @@
 
 Connectly is a modern, real-time chat application built with cutting-edge technologies like **Next.js**, **Convex**, **Clerk**, and **TailwindCSS**. It provides a seamless and intuitive user experience for connecting with friends, creating group chats, and managing conversations.
 
+
 ---
 
 ![NextJS](https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)![Shadcn](https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white)![Zod](https://img.shields.io/badge/Zod-000000?style=for-the-badge&logo=zod&logoColor=3068B7
