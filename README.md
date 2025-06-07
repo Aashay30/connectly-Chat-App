@@ -411,9 +411,7 @@ The `LeaveGroupDialog` component exemplifies robust handling of asynchronous ope
 
 ---
 
-## ⭐ Connectly Project: STAR-Format Behavioral Interview Answers
-
-Use these as ready-made templates for behavioral interview questions about technical challenges, learning, and problem-solving on the Connectly real-time chat app.
+## ⭐ Connectly Project: STAR-Format
 
 ---
 
